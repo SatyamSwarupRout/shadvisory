@@ -1,0 +1,9 @@
+drop table SoilSample;
+drop table SoilTestResult;
+drop table FertilizerRecommendation;
+drop table MicronutrientRecommendation;
+drop table Advisory;
+drop table CropRequirements;
+drop table Farmer;
+drop table LandParcel;
+drop table temp_SoilTestResult;

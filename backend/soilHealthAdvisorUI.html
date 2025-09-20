@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soil Health App Mockup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+    }
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+    .card {
+      background: #f1f1f1;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+    }
+    .icon-label {
+      font-size: 1rem;
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="container">
+  <h2>Login (Farmer)</h2>
+  <input type="tel" placeholder="Enter Mobile Number" />
+  <button>Send OTP</button>
+  <input type="text" placeholder="Enter OTP" />
+  <button>Verify</button>
+</div>
+
+<!-- Dashboard -->
+<div class="container">
+  <h2>Hello, Ramesh Kumar</h2>
+  <button>📍 My Land Parcels</button>
+  <button>🌱 Soil Health Report</button>
+  <button>🧪 Fertilizer Advice</button>
+</div>
+
+<!-- Land Parcels List -->
+<div class="container">
+  <h2>My Land Parcels</h2>
+  <div class="card">
+    <p>Parcel 1</p>
+    <p>Survey No: 112</p>
+    <p>Area: 2.5 ha</p>
+    <button>+ Soil Sample</button>
+  </div>
+  <div class="card">
+    <p>Parcel 2</p>
+    <p>Survey No: 98</p>
+    <p>Area: 3.0 ha</p>
+    <button>+ Soil Sample</button>
+  </div>
+</div>
+
+<!-- Add Soil Sample -->
+<div class="container">
+  <h2>Add Soil Sample</h2>
+  <select>
+    <option>Select Parcel</option>
+    <option>Parcel 1</option>
+  </select>
+  <input type="date" />
+  <input type="number" placeholder="Depth (cm)" />
+  <button>Submit Sample</button>
+</div>
+
+<!-- Soil Health Report -->
+<div class="container">
+  <h2>Soil Health Report - Parcel 1</h2>
+  <p class="icon-label">pH: 6.3</p>
+  <p class="icon-label">N: Low 🔴</p>
+  <p class="icon-label">P: Sufficient 🟢</p>
+  <p class="icon-label">K: High 🟡</p>
+  <p class="icon-label">Zinc: Deficient ⚠️</p>
+  <button>Get Recommendations</button>
+</div>
+
+<!-- Crop Selection -->
+<div class="container">
+  <h2>Select Crop</h2>
+  <select>
+    <option>Wheat</option>
+    <option>Rice</option>
+    <option>Maize</option>
+  </select>
+  <button>Get Recommendations</button>
+</div>
+
+<!-- Fertilizer Recommendation -->
+<div class="container">
+  <h2>Fertilizer Recommendation</h2>
+  <p>Crop: Rice</p>
+  <p>UREA: 45 kg</p>
+  <p>DAP: 25 kg</p>
+  <p>Zinc Sulphate: 4 kg</p>
+  <p>Gypsum: 10 kg</p>
+  <hr />
+  <p>Total Cost: ₹850</p>
+  <p>Subsidy: ₹300</p>
+  <p><strong>Estimated Cost: ₹550</strong></p>
+  <button>Download PDF</button>
+  <button>Share via SMS</button>
+</div>
+
+</body>
+</html>
