@@ -37,13 +37,13 @@ DB_TABLE_NAME = 'SoilTestResult'
 base_path = 'sha_data/*.xml'
 
 global_soil_database_df = pd.DataFrame()
-soil_data_labels = ['Sample_Collection_Date', 'Land_Area', 'Irrigation_Rainfed1', 
+soil_data_labels = ['Sample_Collection_Date', 'Land_Area', 'Irrigation_Rainfed1', 'Latitude', 'Longitude',
                     'pH', 'EC', 'Organic_Carbon_OC', 'Available_Nitrogen_N', 
                     'Available_Phosphorus_P', 'Available_Potassium_K', 'Available_Sulphur_S',
                     'Available_Zinc_Zn', 'Available_Boron_B', 'Available_Iron_Fe', 
                     'Available_Manganese_Mn', 'Available_Copper_Cu']
 
-soil_data_renamed_labels = [ 'sample_date', 'area_acres', 'irrigation_type', 
+soil_data_renamed_labels = [ 'sample_date', 'area_acres', 'irrigation_type', 'location_latitude', 'location_longitude',
                     'pH', 'ec_ds_m', 'organic_carbon_pct', 'nitrogen_kg_ha', 
                     'phosphorus_kg_ha', 'potassium_kg_ha', 'sulfur_kg_ha',
                     'zinc_ppm', 'boron_ppm', 'iron_ppm', 
@@ -70,8 +70,11 @@ for file_path in iglob(base_path, recursive=True):
     pattern = '\d+\.\d+'
     location = re.findall(pattern, GeoPosition)
     #Sample Data
-    sample_data = [ shc_info.get('Sample_Collection_Date')
-            ,shc_info.get('Land_Area'),shc_info.get('Irrigation_Rainfed1')]
+    sample_data = [ shc_info.get('Sample_Collection_Date'),
+                    shc_info.get('Land_Area'),
+                    shc_info.get('Irrigation_Rainfed1'),
+                    location[0] if len(location) > 0 else None,
+                    location[1] if len(location) > 1 else None]
     #DataLabels
     #if(action == 0):
     #Adding Data and Datalabels from Soil Test Report

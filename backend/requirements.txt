@@ -1,6 +1,6 @@
-fastapi
+fastapi[all]
 pydantic
 typing
 pandas
-uvicorn
+uvicorn[standard]
 

@@ -5,5 +5,6 @@ drop table MicronutrientRecommendation;
 drop table Advisory;
 drop table CropRequirements;
 drop table Farmer;
+drop table Sahayak;
+drop table AppAdmin;
 drop table LandParcel;
-drop table temp_SoilTestResult;

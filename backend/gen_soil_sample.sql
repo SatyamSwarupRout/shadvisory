@@ -1,100 +1,101 @@
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 197, '2025-06-30', 29.72);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 26, '2025-06-30', 37.0);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 131, '2025-06-14', 20.85);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 36, '2025-06-05', 36.86);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 282, '2025-06-11', 28.04);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 293, '2025-06-02', 12.19);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 45, '2025-06-20', 24.05);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 77, '2025-06-28', 24.23);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 234, '2025-06-20', 22.47);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 57, '2025-06-10', 21.94);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 194, '2025-06-29', 8.49);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 296, '2025-06-28', 5.31);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 2, '2025-06-04', 14.21);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 22, '2025-06-08', 12.36);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 46, '2025-06-14', 13.16);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 44, '2025-06-14', 27.25);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 24, '2025-06-10', 31.55);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 229, '2025-06-18', 33.41);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 271, '2025-06-19', 21.45);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 121, '2025-06-07', 18.94);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 37, '2025-06-20', 8.47);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 199, '2025-06-29', 32.13);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 15, '2025-06-28', 17.05);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 123, '2025-06-25', 31.23);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 52, '2025-06-13', 4.4);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 33, '2025-06-14', 38.72);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 222, '2025-06-14', 7.96);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 210, '2025-06-15', 28.82);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 37, '2025-06-01', 2.1);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 109, '2025-06-26', 1.61);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 212, '2025-06-30', 22.88);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 101, '2025-06-29', 3.33);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 281, '2025-06-16', 24.86);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 105, '2025-06-29', 21.59);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 193, '2025-06-14', 38.88);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 39, '2025-06-10', 11.14);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 169, '2025-06-13', 15.99);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 115, '2025-06-09', 36.04);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 129, '2025-06-19', 27.09);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 126, '2025-06-28', 18.63);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 256, '2025-06-12', 16.56);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 103, '2025-06-04', 22.5);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 34, '2025-06-13', 7.06);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 47, '2025-06-18', 8.81);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 77, '2025-06-17', 15.47);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 69, '2025-06-04', 9.74);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 124, '2025-06-28', 36.21);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 195, '2025-06-17', 9.81);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 202, '2025-06-26', 35.44);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 1, '2025-06-20', 8.71);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 142, '2025-06-20', 39.97);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 289, '2025-06-29', 8.32);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 173, '2025-06-18', 34.69);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 89, '2025-06-02', 8.12);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 187, '2025-06-18', 9.42);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 109, '2025-06-19', 26.4);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 236, '2025-06-16', 11.33);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 120, '2025-06-16', 10.96);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 165, '2025-06-26', 7.94);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 288, '2025-06-01', 24.11);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 291, '2025-06-20', 37.24);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 136, '2025-06-26', 25.05);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 226, '2025-06-22', 9.28);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 32, '2025-06-15', 9.32);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 275, '2025-06-07', 12.24);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 157, '2025-06-01', 3.96);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 112, '2025-06-09', 23.33);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 236, '2025-06-20', 32.71);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 218, '2025-06-15', 3.1);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 108, '2025-06-19', 1.56);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 189, '2025-06-18', 29.13);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 292, '2025-06-04', 22.2);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 2, '2025-06-01', 38.35);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 14, '2025-06-04', 38.87);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 267, '2025-06-06', 21.34);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 173, '2025-06-12', 23.19);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 150, '2025-06-12', 7.44);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 24, '2025-06-23', 2.99);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 261, '2025-06-24', 25.66);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 300, '2025-06-05', 4.45);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 235, '2025-06-14', 15.68);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 240, '2025-06-13', 19.4);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 145, '2025-06-10', 12.52);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 103, '2025-06-24', 11.36);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 24, '2025-06-12', 1.33);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 235, '2025-06-19', 12.57);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 234, '2025-06-16', 21.72);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 83, '2025-06-21', 34.05);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 282, '2025-06-11', 5.59);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 90, '2025-06-04', 2.33);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 85, '2025-06-28', 13.21);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 42, '2025-06-19', 27.25);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 51, '2025-06-07', 34.68);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 173, '2025-06-02', 29.66);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 109, '2025-06-15', 26.95);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 92, '2025-06-25', 18.9);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 225, '2025-06-15', 39.53);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 262, '2025-06-10', 29.34);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 181, '2025-06-01', 9.97);
-INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES (NULL, 292, '2025-06-05', 2.22);
+INSERT INTO SoilSample (rowid, parcel_id, sample_date, depth_cm) VALUES 
+(1, 296, '2025-06-03', 18.06),
+(2, 192, '2025-06-24', 27.56),
+(3, 85, '2025-06-10', 8.71),
+(4, 34, '2025-06-19', 22.92),
+(5, 210, '2025-06-27', 13.06),
+(6, 62, '2025-06-22', 6.1),
+(7, 177, '2025-06-01', 17.42),
+(8, 64, '2025-06-06', 27.19),
+(9, 238, '2025-06-06', 5.44),
+(10, 210, '2025-06-28', 6.75),
+(11, 297, '2025-06-13', 38.02),
+(12, 216, '2025-06-19', 26.99),
+(13, 262, '2025-06-12', 33.32),
+(14, 225, '2025-06-16', 4.97),
+(15, 24, '2025-06-09', 28.34),
+(16, 204, '2025-06-27', 24.87),
+(17, 292, '2025-06-10', 23.5),
+(18, 267, '2025-06-30', 4.93),
+(19, 69, '2025-06-30', 11.21),
+(20, 209, '2025-06-10', 33.88),
+(21, 76, '2025-06-18', 12.56),
+(22, 201, '2025-06-10', 32.83),
+(23, 220, '2025-06-30', 26.12),
+(24, 115, '2025-06-17', 25.84),
+(25, 111, '2025-06-26', 4.29),
+(26, 194, '2025-06-06', 19.97),
+(27, 104, '2025-06-04', 6.23),
+(28, 7, '2025-06-19', 31.27),
+(29, 295, '2025-06-25', 4.38),
+(30, 20, '2025-06-25', 8.93),
+(31, 96, '2025-06-05', 24.37),
+(32, 20, '2025-06-17', 27.58),
+(33, 261, '2025-06-18', 15.83),
+(34, 232, '2025-06-22', 11.33),
+(35, 125, '2025-06-10', 13.88),
+(36, 86, '2025-06-02', 33.11),
+(37, 240, '2025-06-30', 28.84),
+(38, 270, '2025-06-29', 26.5),
+(39, 24, '2025-06-22', 37.23),
+(40, 138, '2025-06-03', 38.07),
+(41, 159, '2025-06-13', 17.15),
+(42, 182, '2025-06-02', 1.74),
+(43, 33, '2025-06-06', 1.62),
+(44, 94, '2025-06-12', 33.34),
+(45, 92, '2025-06-23', 21.18),
+(46, 39, '2025-06-22', 17.65),
+(47, 80, '2025-06-17', 19.22),
+(48, 174, '2025-06-27', 15.75),
+(49, 230, '2025-06-04', 27.56),
+(50, 196, '2025-06-29', 30.86),
+(51, 16, '2025-06-26', 26.71),
+(52, 168, '2025-06-22', 20.43),
+(53, 184, '2025-06-26', 37.34),
+(54, 52, '2025-06-23', 1.02),
+(55, 221, '2025-06-15', 29.54),
+(56, 127, '2025-06-21', 13.07),
+(57, 39, '2025-06-19', 23.45),
+(58, 81, '2025-06-15', 36.89),
+(59, 65, '2025-06-08', 29.39),
+(60, 172, '2025-06-22', 22.48),
+(61, 66, '2025-06-20', 25.95),
+(62, 261, '2025-06-10', 17.66),
+(63, 128, '2025-06-30', 20.19),
+(64, 276, '2025-06-08', 7.2),
+(65, 153, '2025-06-29', 28.34),
+(66, 140, '2025-06-26', 31.89),
+(67, 147, '2025-06-12', 28.74),
+(68, 126, '2025-06-11', 30.1),
+(69, 258, '2025-06-14', 8.08),
+(70, 100, '2025-06-15', 1.58),
+(71, 58, '2025-06-17', 21.3),
+(72, 233, '2025-06-21', 27.4),
+(73, 178, '2025-06-24', 10.22),
+(74, 79, '2025-06-28', 24.51),
+(75, 51, '2025-06-27', 29.24),
+(76, 221, '2025-06-24', 5.99),
+(77, 26, '2025-06-18', 8.79),
+(78, 285, '2025-06-07', 3.83),
+(79, 198, '2025-06-14', 15.33),
+(80, 174, '2025-06-29', 19.11),
+(81, 240, '2025-06-15', 35.88),
+(82, 247, '2025-06-16', 27.38),
+(83, 51, '2025-06-01', 11.85),
+(84, 222, '2025-06-30', 38.09),
+(85, 181, '2025-06-14', 15.4),
+(86, 179, '2025-06-26', 13.65),
+(87, 240, '2025-06-14', 23.65),
+(88, 45, '2025-06-28', 11.51),
+(89, 251, '2025-06-04', 38.33),
+(90, 194, '2025-06-26', 21.73),
+(91, 58, '2025-06-25', 7.9),
+(92, 298, '2025-06-23', 31.53),
+(93, 245, '2025-06-21', 12.9),
+(94, 48, '2025-06-16', 38.79),
+(95, 81, '2025-06-20', 3.14),
+(96, 39, '2025-06-08', 37.84),
+(97, 205, '2025-06-04', 31.75),
+(98, 50, '2025-06-26', 8.54),
+(99, 5, '2025-06-25', 30.74),
+(100, 266, '2025-06-26', 19.98);
