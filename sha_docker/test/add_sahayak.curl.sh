@@ -2,7 +2,7 @@ curl -X POST "http://localhost:8000/register_sahayak" \
      -H "Content-Type: application/json" \
      -d '{
      "phone_number": "55555555555",
-     "email": "abcdefgh@tyui.com",
+     "email": "",
      "first_name": "",
      "last_name": "",
      "aadhaar_number": "",
