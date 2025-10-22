@@ -1,15 +1,15 @@
-curl -X POST "http://localhost:8000/register_sahayak" \
+curl -X POST "http://localhost:8000/update_sahayak" \
      -H "Content-Type: application/json" \
      -d '{
      "phone_number": "55555555555",
-     "email": "abcdefgh@tyui.com",
+     "email": "WER4567h@tyui.com",
      "first_name": "",
      "last_name": "",
      "aadhaar_number": "",
      "village": "",
      "block_name": "",
      "district": "",
-     "state": "",
+     "state": "ODISHA",
      "gender_category": "",
      "education_level": "",
      "is_active": true,

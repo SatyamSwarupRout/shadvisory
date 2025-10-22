@@ -46,11 +46,11 @@ revision:
 
 # Apply latest migrations
 migrate:
-	$(DC) run --rm --env-file $(ENV_FILE) $(WEB) alembic upgrade head
+	$(DC) run --rm --env-from-file $(ENV_FILE) $(WEB) alembic upgrade head
 
 # Roll back one migration
 downgrade:
-	$(DC) run --rm --env-file $(ENV_FILE) $(WEB) alembic downgrade -1
+	$(DC) run --rm --env-from-file $(ENV_FILE) $(WEB) alembic downgrade -1
 
 # Show migration history
 history:
