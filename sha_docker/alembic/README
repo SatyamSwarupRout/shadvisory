@@ -1,1 +1,26 @@
 Generic single-database configuration.
+
+All secerets go in .env file
+
+# Dev env
+It is kept in "dotenv" file. Copy dotenv file to .env and run "make up" to start the backend.
+
+# prod env
+dotenv file will not be in production. System admin needs to add these variables in the .env file
+
+#--------------------
+.env file content
+#------------------
+# PostgreSQL configuration
+POSTGRES_USER=xxxxxx
+POSTGRES_PASSWORD=yyyyyyy
+POSTGRES_DB=zzzzzzz
+POSTGRES_HOST=mmmmmmmmmm
+POSTGRES_PORT=5432
+
+# FastAPI application config
+APP_ENV=development
+APP_PORT=8000
+
+# SQLAlchemy DB URL
+DATABASE_URL=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}

@@ -1,9 +1,8 @@
-curl -X POST "http://localhost:8000/update_sahayak" \
+curl -X PUT "http://localhost:8000/sahayak/update/6666666" \
      -H "Content-Type: application/json" \
      -d '{
-     "phone_number": "55555555555",
-     "email": "WER4567h@tyui.com",
-     "first_name": "",
+     "email": "new_email@tyui.com",
+     "first_name": "cwnandasukanta",
      "last_name": "",
      "aadhaar_number": "",
      "village": "",

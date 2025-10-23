@@ -42,7 +42,7 @@ shell:
 
 # Create a new migration (use: make revision msg="add users table")
 revision:
-	$(DC) run --rm --env-file $(ENV_FILE) $(WEB) alembic revision --autogenerate -m "$(msg)"
+	$(DC) run --rm --env-from-file $(ENV_FILE) $(WEB) alembic revision --autogenerate -m "$(msg)"
 
 # Apply latest migrations
 migrate:
@@ -54,7 +54,7 @@ downgrade:
 
 # Show migration history
 history:
-	$(DC) run --rm --env-file $(ENV_FILE) $(WEB) alembic history
+	$(DC) run --rm --env-from-file $(ENV_FILE) $(WEB) alembic history
 
 # Recreate database schema from scratch
 reset-db:
