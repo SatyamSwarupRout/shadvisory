@@ -3,7 +3,7 @@
 # ==============================================
 
 # Service names (match docker-compose.yml)
-DC          = docker-compose
+DC          = docker compose
 WEB         = web
 DB          = db
 ENV_FILE    = .env
