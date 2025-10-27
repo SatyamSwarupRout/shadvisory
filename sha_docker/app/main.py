@@ -184,8 +184,11 @@ def add_farmer(farmer: pydantic_classes.FarmerCreate, db: Session = Depends(data
        
         db_farmer = models.Farmer()
         db_farmer.sahayak_id = db_sahayak.sahayak_id
-        db_farmer.phone_number = farmer.phone_number
-        
+        # Set other fields if provided
+        for key, value in farmer.model_dump().items():
+            if key != "sahayak_phone_number":
+                setattr(db_farmer, key, value)  
+
         db.add(db_farmer)
         db.commit()
         db.refresh(db_farmer)
