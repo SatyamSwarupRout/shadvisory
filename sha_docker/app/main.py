@@ -279,7 +279,7 @@ def list_parcels(db: Session = Depends(database.get_db)):
         print("❌ Error occurred while fetching Parcels:", e)
         return {"error": "Failed to fetch Parcels"}
 
-@app.get("/parcel/fetch/{parcel_id}")
+@app.get("/parcel/fetch_by_parcel_id/{parcel_id}")
 def get_parcel(parcel_id: int, db: Session = Depends(database.get_db)):
     try:
         db_parcel = db.query(models.LandParcel).filter(models.LandParcel.parcel_id == parcel_id).first()
@@ -290,7 +290,7 @@ def get_parcel(parcel_id: int, db: Session = Depends(database.get_db)):
         print("❌ Error occurred while fetching Parcel:", e)
         return {"error": "Failed to fetch Parcel"}
 
-@app.get("/parcels/fetch/{phone}")
+@app.get("/parcels/fetch_by_farmer_phone/{phone}")
 def get_parcels_by_farmer(phone: str, db: Session = Depends(database.get_db)):
     try:
         db_farmer = db.query(models.Farmer).filter(models.Farmer.phone_number == phone).first()
@@ -302,7 +302,7 @@ def get_parcels_by_farmer(phone: str, db: Session = Depends(database.get_db)):
         print("❌ Error occurred while fetching Parcels by farmer:", e)
         return {"error": "Failed to fetch Parcels"}
     
-@app.get("/parcels/fetch/{farmer_id}")
+@app.get("/parcels/fetch_by_farmer_id/{farmer_id}")
 def get_parcels_by_farmer_id(farmer_id: int, db: Session = Depends(database.get_db)):
     try:
         db_farmer = db.query(models.Farmer).filter(models.Farmer.farmer_id == farmer_id).first()
@@ -314,7 +314,7 @@ def get_parcels_by_farmer_id(farmer_id: int, db: Session = Depends(database.get_
         print("❌ Error occurred while fetching Parcels by farmer_id:", e)
         return {"error": "Failed to fetch Parcels"}
 
-@app.get("/parcels/fetch/{plot_no}")
+@app.get("/parcels/fetch_by_plot_no/{plot_no}")
 def get_parcels_by_plot_no(plot_no: str, db: Session = Depends(database.get_db)):
     try:
         # This returns all parcels that have this plot_no (could belong to different farmers).
@@ -453,7 +453,7 @@ def list_soil_samples(db: Session = Depends(database.get_db)):
         print("❌ Error occurred while fetching Soil Samples:", e)
         return {"error": "Failed to fetch Soil Samples"}
 
-@app.get("/soil_sample/fetch/{sample_id}")
+@app.get("/soil_sample/fetch_by_sample_id/{sample_id}")
 def get_soil_sample(sample_id: int, db: Session = Depends(database.get_db)):
     try:
         db_sample = db.query(models.SoilSample).filter(models.SoilSample.sample_id == sample_id).first()
@@ -464,7 +464,7 @@ def get_soil_sample(sample_id: int, db: Session = Depends(database.get_db)):
         print("❌ Error occurred while fetching Soil Sample:", e)
         return {"error": "Failed to fetch Soil Sample"}
 
-@app.get("/soil_samples/fetch/{phone}")
+@app.get("/soil_samples/fetch_by_farmer_phone/{phone}")
 def get_soil_samples_by_farmer(phone: str, db: Session = Depends(database.get_db)):
     try:
         db_farmer = db.query(models.Farmer).filter(models.Farmer.phone_number == phone).first()
@@ -476,7 +476,7 @@ def get_soil_samples_by_farmer(phone: str, db: Session = Depends(database.get_db
         print("❌ Error occurred while fetching Soil Samples by farmer:", e)
         return {"error": "Failed to fetch Soil Samples"}
 
-@app.get("/soil_samples/fetch/{parcel_id}")
+@app.get("/soil_samples/fetch_by_parcel_id/{parcel_id}")
 def get_soil_samples_by_parcel(parcel_id: int, db: Session = Depends(database.get_db)):
     try:
         samples = db.query(models.SoilSample).filter(models.SoilSample.parcel_id == parcel_id).all()
