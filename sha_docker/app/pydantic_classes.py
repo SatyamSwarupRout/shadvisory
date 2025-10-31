@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List, Optional
-
+from datetime import datetime
 
 class SahayakBase(BaseModel):
     phone_number: str
@@ -83,3 +83,106 @@ class FarmerUpdate(BaseModel):
     gender_category: Optional[str] = None
     is_active: Optional[bool] = None
     is_approved: Optional[bool] = None
+
+# ----------------------
+# Land Parcel DTOs
+# ----------------------
+class LandParcelBase(BaseModel):
+    farmer_id: Optional[int] = None
+    state: Optional[str] = None
+    district: Optional[str] = None
+    tehsil: Optional[str] = None
+    ri_circle: Optional[str] = None
+    village: Optional[str] = None
+    survey_no: Optional[str] = None
+    khata_no: Optional[str] = None
+    plot_no: Optional[str] = None
+    area: Optional[float] = None
+    area_unit: Optional[str] = None
+    is_active: bool = True
+
+class LandParcelCreate(BaseModel):
+    farmer_phone: str                        # required to link -> resolved server-side
+    state: Optional[str] = None
+    district: Optional[str] = None
+    tehsil: Optional[str] = None
+    ri_circle: Optional[str] = None
+    village: Optional[str] = None
+    survey_no: Optional[str] = None
+    khata_no: Optional[str] = None
+    plot_no: str
+    area: Optional[float] = None
+    area_unit: Optional[str] = None
+    is_active: bool = True
+
+class LandParcelUpdate(BaseModel):
+    state: Optional[str] = None
+    district: Optional[str] = None
+    tehsil: Optional[str] = None
+    ri_circle: Optional[str] = None
+    village: Optional[str] = None
+    survey_no: Optional[str] = None
+    khata_no: Optional[str] = None
+    area: Optional[float] = None
+    area_unit: Optional[str] = None
+    is_active: Optional[bool] = None
+
+
+# ----------------------
+# Soil Sample DTOs
+# ----------------------
+class SoilSampleBase(BaseModel):
+    farmer_id: Optional[int] = None
+    parcel_id: Optional[int] = None
+    sample_date: datetime
+    test_result_date: Optional[datetime] = None
+    sample_depth_cm: Optional[int] = None
+    ph: Optional[float] = None
+    ec: Optional[float] = None
+    n: Optional[float] = None
+    p: Optional[float] = None
+    k: Optional[float] = None
+    zinc: Optional[float] = None
+    copper: Optional[float] = None
+    boron: Optional[float] = None
+    sulfur: Optional[float] = None
+    iron: Optional[float] = None
+    manganese: Optional[float] = None
+    is_active: bool = True
+
+class SoilSampleCreate(BaseModel):
+    farmer_phone: Optional[str] = None   # server will resolve to farmer_id if provided
+    parcel_id: Optional[int] = None
+    sample_date: datetime
+    test_result_date: Optional[datetime] = None
+    sample_depth_cm: Optional[int] = None
+    ph: Optional[float] = None
+    ec: Optional[float] = None
+    n: Optional[float] = None
+    p: Optional[float] = None
+    k: Optional[float] = None
+    zinc: Optional[float] = None
+    copper: Optional[float] = None
+    boron: Optional[float] = None
+    sulfur: Optional[float] = None
+    iron: Optional[float] = None
+    manganese: Optional[float] = None
+    is_active: bool = True
+
+class SoilSampleUpdate(BaseModel):
+    #parcel_id: Optional[int] = None
+    sample_date: Optional[datetime] = None
+    test_result_date: Optional[datetime] = None
+    sample_depth_cm: Optional[int] = None
+    ph: Optional[float] = None
+    ec: Optional[float] = None
+    n: Optional[float] = None
+    p: Optional[float] = None
+    k: Optional[float] = None
+    zinc: Optional[float] = None
+    copper: Optional[float] = None
+    boron: Optional[float] = None
+    sulfur: Optional[float] = None
+    iron: Optional[float] = None
+    manganese: Optional[float] = None
+    is_active: Optional[bool] = None
