@@ -65,7 +65,7 @@ def add_sahayak(sahayak: pydantic_classes.SahayakCreate, db: Session = Depends(d
         return {"id": db_sahayak.sahayak_id, **sahayak.model_dump()}
     except Exception as e:
         print("❌ Error occurred while adding Sahayak:", e)
-        return {"error": "Failed to add Sahayak"}
+        return {"error": "Failed to add Sahayak as sahayak phone number already exist"}
     
 # ------------------------------------------------
 # Update a Sahayak by his phone number
@@ -252,8 +252,8 @@ def delete_farmer(phone: str, db: Session = Depends(database.get_db)):
 def undelete_farmer(phone: str, db: Session = Depends(database.get_db)):
     # Reactivate the Farmer
     # Set is_active to True
-    #   Only Admin can undelete/reactivate a Farmer
-    #
+    # Only Admin can undelete/reactivate a Farmer
+    
     try:
         db_farmer = db.query(models.Farmer).filter(models.Farmer.phone_number == phone).first()
         if db_farmer is None:
@@ -317,7 +317,6 @@ def get_parcels_by_farmer_id(farmer_id: int, db: Session = Depends(database.get_
 @app.get("/parcels/fetch_by_plot_no/{plot_no}")
 def get_parcels_by_plot_no(plot_no: str, db: Session = Depends(database.get_db)):
     try:
-        # This returns all parcels that have this plot_no (could belong to different farmers).
         parcels = db.query(models.LandParcel).filter(models.LandParcel.plot_no == plot_no).all()
         if not parcels:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Parcel(s) with this plot_no not found")
@@ -334,53 +333,58 @@ def add_parcel(parcel: pydantic_classes.LandParcelCreate, db: Session = Depends(
         if db_farmer is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Farmer not found")
 
-        # If plot_no is provided, ensure uniqueness for this farmer
+        # Check uniqueness on (farmer_id, plot_no, survey_no)
         payload = parcel.model_dump()
         plot_no = payload.get("plot_no")
-        if plot_no is not None:
+        survey_no = payload.get("survey_no")
+
+        if plot_no is not None and survey_no is not None:
             existing = db.query(models.LandParcel).filter(
                 models.LandParcel.farmer_id == db_farmer.farmer_id,
-                models.LandParcel.plot_no == plot_no
+                models.LandParcel.plot_no == plot_no,
+                models.LandParcel.survey_no == survey_no
             ).first()
             if existing:
-                raise HTTPException(status_code=status.HTTP_409_CONFLICT,
-                                    detail=f"Parcel with plot_no '{plot_no}' already exists for this farmer (parcel_id={existing.parcel_id})")
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail=(
+                        f"Parcel with plot_no '{plot_no}' and survey_no '{survey_no}' "
+                        f"already exists for this farmer (parcel_id={existing.parcel_id})."
+                    )
+                )
 
         db_parcel = models.LandParcel()
         db_parcel.farmer_id = db_farmer.farmer_id
 
-        # apply defaults from farmer if parcel's fields are None (state, district, tehsil, village)
         for key, value in payload.items():
             if key == "farmer_phone":
                 continue
             if value is None:
                 if key == "state" and getattr(db_farmer, "state", None):
                     setattr(db_parcel, "state", db_farmer.state)
-                    continue
-                if key == "district" and getattr(db_farmer, "district", None):
+                elif key == "district" and getattr(db_farmer, "district", None):
                     setattr(db_parcel, "district", db_farmer.district)
-                    continue
-                if key == "tehsil" and getattr(db_farmer, "block_name", None):
+                elif key == "tehsil" and getattr(db_farmer, "block_name", None):
                     setattr(db_parcel, "tehsil", db_farmer.block_name)
-                    continue
-                if key == "village" and getattr(db_farmer, "village", None):
+                elif key == "village" and getattr(db_farmer, "village", None):
                     setattr(db_parcel, "village", db_farmer.village)
-                    continue
-                # leave other None fields as None
             else:
                 setattr(db_parcel, key, value)
 
         db.add(db_parcel)
         try:
             db.commit()
-        except IntegrityError as ie:
+        except IntegrityError:
             db.rollback()
-            # If a race condition lets two parallel requests through, DB unique constraint will protect us here
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Parcel with same plot_no already exists for this farmer.")
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="Parcel with the same (plot_no, survey_no) already exists for this farmer."
+            )
+
         db.refresh(db_parcel)
         return {"id": db_parcel.parcel_id, **parcel.model_dump()}
+
     except HTTPException:
-        # re-raise HTTP errors as-is
         raise
     except Exception as e:
         print("❌ Error occurred while adding Parcel:", e)
@@ -519,7 +523,6 @@ def add_soil_sample(sample: pydantic_classes.SoilSampleCreate, db: Session = Dep
         db_sample.parcel_id = sample.parcel_id
 
         payload = sample.model_dump()
-        # default test_result_date to sample_date if not provided
         sample_date_val = payload.get("sample_date")
         if payload.get("test_result_date") is None:
             payload["test_result_date"] = sample_date_val
@@ -548,7 +551,6 @@ def update_soil_sample(sample_id: int, sample: pydantic_classes.SoilSampleUpdate
             return {"error": "Cannot update inactive Soil Sample"}
 
         sample_data = sample.dict(exclude_unset=True)
-        # if parcel_id updated, ensure it belongs to the same farmer
         if "parcel_id" in sample_data and sample_data["parcel_id"] is not None:
             db_parcel = db.query(models.LandParcel).filter(models.LandParcel.parcel_id == sample_data["parcel_id"]).first()
             if db_parcel is None:

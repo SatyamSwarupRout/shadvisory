@@ -79,7 +79,7 @@ class LandParcel(Base):
 
     parcel_id = Column(Integer, primary_key=True, index=True)
     farmer_id = Column(Integer, ForeignKey("farmer.farmer_id"), nullable=False)
-
+    #farmer_phone = Column(String, ForeignKey("farmer.phone_number"), nullable=True)
     # Address / location fields (defaults to farmer's values if not provided)
     state = Column(String)
     district = Column(String)
@@ -88,20 +88,20 @@ class LandParcel(Base):
     village = Column(String)
 
     # Identification fields
-    survey_no = Column(String)   # SurveyNo / Khata no (you can optionally split)
+    survey_no = Column(String, nullable=False)   
     khata_no = Column(String)
-    plot_no = Column(String)
+    plot_no = Column(String, nullable=False)     
 
     # Area
-    area = Column(Float)         # store numeric area
-    area_unit = Column(String, default = "acre")   # e.g. hectare / acre
+    area = Column(Float, nullable=False)         
+    area_unit = Column(String, default="acre")   
 
     created_at = Column(TIMESTAMP, server_default=sql_text("CURRENT_TIMESTAMP"))
     updated_at = Column(TIMESTAMP, server_default=sql_text("CURRENT_TIMESTAMP"), onupdate=sql_text("CURRENT_TIMESTAMP"))
     is_active = Column(Boolean, default=True)
 
     __table_args__ = (
-        UniqueConstraint('farmer_id', 'plot_no', name='uq_farmer_plot'),
+        UniqueConstraint('farmer_id', 'plot_no', 'survey_no', name='uq_farmer_plot_survey'),
     )
 
     # Relationships
@@ -117,24 +117,24 @@ class SoilSample(Base):
 
     sample_id = Column(Integer, primary_key=True, index=True)
     farmer_id = Column(Integer, ForeignKey("farmer.farmer_id"), nullable=False)
-    parcel_id = Column(Integer, ForeignKey("land_parcel.parcel_id"), nullable=True)  # optional if not associated
+    parcel_id = Column(Integer, ForeignKey("land_parcel.parcel_id"), nullable=False)
 
     sample_date = Column(TIMESTAMP, nullable=False)
-    test_result_date = Column(TIMESTAMP, nullable=True)  # default to sample_date when inserting if not provided
+    test_result_date = Column(TIMESTAMP, nullable=True)  
     sample_depth_cm = Column(Integer)
 
     # Test result numeric fields (nullable)
-    ph = Column(Float)
-    ec = Column(Float)
-    n = Column(Float)
-    p = Column(Float)
-    k = Column(Float)
-    zinc = Column(Float)
-    copper = Column(Float)
-    boron = Column(Float)
-    sulfur = Column(Float)
-    iron = Column(Float)
-    manganese = Column(Float)
+    ph = Column(Float, nullable = True)
+    ec = Column(Float, nullable = True)
+    n = Column(Float, nullable = True)
+    p = Column(Float, nullable = True)
+    k = Column(Float, nullable = True)
+    zinc = Column(Float, nullable = True)
+    copper = Column(Float, nullable = True)
+    boron = Column(Float, nullable = True)
+    sulfur = Column(Float, nullable = True)
+    iron = Column(Float, nullable = True)
+    manganese = Column(Float, nullable = True)
 
     created_at = Column(TIMESTAMP, server_default=sql_text("CURRENT_TIMESTAMP"))
     updated_at = Column(TIMESTAMP, server_default=sql_text("CURRENT_TIMESTAMP"), onupdate=sql_text("CURRENT_TIMESTAMP"))

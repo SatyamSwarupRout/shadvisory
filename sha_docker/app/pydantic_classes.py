@@ -87,33 +87,39 @@ class FarmerUpdate(BaseModel):
 # ----------------------
 # Land Parcel DTOs
 # ----------------------
+from pydantic import BaseModel
+from typing import Optional
+
 class LandParcelBase(BaseModel):
     farmer_id: Optional[int] = None
+    #farmer_phone: Optional[str] = None
     state: Optional[str] = None
     district: Optional[str] = None
     tehsil: Optional[str] = None
     ri_circle: Optional[str] = None
     village: Optional[str] = None
-    survey_no: Optional[str] = None
+    survey_no: str                           
     khata_no: Optional[str] = None
-    plot_no: Optional[str] = None
-    area: Optional[float] = None
-    area_unit: Optional[str] = None
+    plot_no: str                             
+    area: float                              
+    area_unit: Optional[str] = "acre"
     is_active: bool = True
 
+
 class LandParcelCreate(BaseModel):
-    farmer_phone: str                        # required to link -> resolved server-side
+    farmer_phone: str                        
     state: Optional[str] = None
     district: Optional[str] = None
     tehsil: Optional[str] = None
     ri_circle: Optional[str] = None
     village: Optional[str] = None
-    survey_no: Optional[str] = None
+    survey_no: str                           
     khata_no: Optional[str] = None
-    plot_no: str
-    area: Optional[float] = None
-    area_unit: Optional[str] = None
+    plot_no: str                             
+    area: float                              
+    area_unit: Optional[str] = "acre"
     is_active: bool = True
+
 
 class LandParcelUpdate(BaseModel):
     state: Optional[str] = None
@@ -121,7 +127,6 @@ class LandParcelUpdate(BaseModel):
     tehsil: Optional[str] = None
     ri_circle: Optional[str] = None
     village: Optional[str] = None
-    survey_no: Optional[str] = None
     khata_no: Optional[str] = None
     area: Optional[float] = None
     area_unit: Optional[str] = None
@@ -151,7 +156,7 @@ class SoilSampleBase(BaseModel):
     is_active: bool = True
 
 class SoilSampleCreate(BaseModel):
-    farmer_phone: Optional[str] = None   # server will resolve to farmer_id if provided
+    farmer_phone: Optional[str] = None   
     parcel_id: Optional[int] = None
     sample_date: datetime
     test_result_date: Optional[datetime] = None
